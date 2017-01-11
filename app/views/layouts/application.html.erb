@@ -11,11 +11,21 @@
   <body>
   <h1>This is changed</h1>
 
+  <% if current_user %>
+  	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      <a href=<%= '/profiles/show' %>>Your Profile</a>
+
+  <% end %>
+
   <ul>
 	<li><a href='/'>Home</a></li>
+
+  <% if !current_user %>
   	<li><a href=<%= '/users/sign_up'%>>Sign Up</a></li>
   	<li><a href=<%= '/users/sign_in' %>>Sign In</a></li>
   </ul>
+
+  <% end %>
     <%= yield %>
   </body>
 </html>
