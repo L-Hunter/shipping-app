@@ -1,0 +1,16 @@
+<h1>Boats</h1>
+
+
+
+<%= form_for Boat.new do |f| %>
+
+	<%= f.label :name %> 
+		<%= f.text_field :name %>
+	<%= f.label :location %>
+		<%= f.text_field :location %>
+	<%= f.label :containers %>
+		<%= f.text_field :containers %>
+
+	<%= f.submit "Submit" %>
+
+<% end %>

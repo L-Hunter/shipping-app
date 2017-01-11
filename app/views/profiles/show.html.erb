@@ -3,19 +3,45 @@
 
 <% if current_user %>
 
-<h2>User Information:</h2>
-<%= current_user.email %>
-<%= current_user.id %>
-<br>
+	<h2>User Information:</h2>
+	<%= current_user.email %>
+	<%= current_user.id %>
+	<% @jobs.each do |job|  %>
+		<% if current_user.id == job.user_id %>
+			<div>
+				<h3>Job Number: <%= job.id %></h3> 
+				<%= job.destination %>
+				<%= job.origin %>
+				<%= job.cost %>
+				<%= job.description %>
+				<%= job.containers %>
+				<a href='/jobs/<%= "#{job.id}" %>'>Go to This Job</a>
+			</div>
+		<% end %>
 
-<a href=<%= '/users/edit' %>>Edit Your Profile</a>
-<a href=<%= '/jobs/show' %>> Jobs</a>
+	<% end %>
+
+
+	<% @boats.each do |boat| %>
+		<div>
+			<h3>Boats</h3>
+			<%= boat.name %>
+			<%= boat.location %>
+			<%= boat.containers %>
+		</div>
+	<% end %>
+
+	<br>
+
+	<a href=<%= '/users/edit' %>>Edit Your Profile</a>
+	<a href=<%= '/jobs/new' %>> Create New Jobs</a>
+	<a href=<%= '/boats/new'%>>Create a new Boat</a>
 
 <% end %>
 
 <% if !current_user %>
 
-YOu're not logged in 
+	<p>YOu're not logged in </p>
 
 <% end %>
 
