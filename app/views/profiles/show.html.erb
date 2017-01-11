@@ -3,19 +3,30 @@
 
 <% if current_user %>
 
-<h2>User Information:</h2>
-<%= current_user.email %>
-<%= current_user.id %>
-<br>
+	<h2>User Information:</h2>
+	<%= current_user.email %>
+	<%= current_user.id %>
+	<% @jobs.each do |job|  %>
+		<div>
+			<h3>Job Number: <%= job.id %></h3> 
+			<%= job.destination %>
+			<%= job.origin %>
+			<%= job.cost %>
+			<%= job.description %>
+			<%= job.containers %>
+		</div>
+	<% end %>
 
-<a href=<%= '/users/edit' %>>Edit Your Profile</a>
-<a href=<%= '/jobs/show' %>> Jobs</a>
+	<br>
+
+	<a href=<%= '/users/edit' %>>Edit Your Profile</a>
+	<a href=<%= '/jobs/show' %>> Create New Jobs</a>
 
 <% end %>
 
 <% if !current_user %>
 
-YOu're not logged in 
+	<p>YOu're not logged in </p>
 
 <% end %>
 
