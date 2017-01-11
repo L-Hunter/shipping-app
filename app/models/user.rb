@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_one :job, dependent: :destroy
 
+  has_attached_file :avatar
+
 end
