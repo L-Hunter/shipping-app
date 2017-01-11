@@ -1,0 +1,23 @@
+<h1>User Control Panel</h1>
+
+
+<% if current_user %>
+
+<h2>User Information:</h2>
+<%= current_user.email %>
+<%= current_user.id %>
+<br>
+
+<a href=<%= '/users/edit' %>>Edit Your Profile</a>
+<a href=<%= '/jobs/show' %>> Jobs</a>
+
+<% end %>
+
+<% if !current_user %>
+
+YOu're not logged in 
+
+<% end %>
+
+
+

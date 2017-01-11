@@ -1,7 +1,20 @@
 Rails.application.routes.draw do
+
+
+  get 'boats/index'
+
+  get 'boats/show'
+
+  get 'profiles/index'
+
+  get 'profiles/show'
+
   get 'static_pages/home'
 
   get 'static_pages/about'
+
+
+  resources :jobs, :boats, :profiles
 
   devise_for :users, controllers: {
         sessions: 'users/sessions'
