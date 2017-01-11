@@ -21,6 +21,11 @@
 
 	<% end %>
 
+	<% current_user.job.boats.each do |boat| %>
+		<h3>Boat Name:</h3><%= boat.name %>
+		<br>
+	<% end %>
+
 
 	<% @boats.each do |boat| %>
 		<div>

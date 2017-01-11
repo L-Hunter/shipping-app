@@ -13,6 +13,22 @@
 			</div>
 
 
+	<% @boats.each do |boat| %>
+		<div>
+			<h3>Boats</h3>
+			<%= boat.name %>
+			<%= boat.location %>
+			<%= boat.containers %>
+			<%= form_tag '/jobs/add_to_job' do %>
+				<%= hidden_field_tag :boat_id, boat.id %>
+				<%= submit_tag ("Add To Job ") %>
+			<% end %>
+		</div>
+
+	<% end %>
+
+
+
 
 
 
