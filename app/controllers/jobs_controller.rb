@@ -9,6 +9,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @boats = Boat.all
   end
 
 
@@ -25,6 +26,13 @@ class JobsController < ApplicationController
 
   end
 
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+
+    redirect_to '/profiles/show'
+
+  end
 
 
 
