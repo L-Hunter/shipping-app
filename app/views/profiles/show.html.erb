@@ -17,10 +17,21 @@
 		</div>
 	<% end %>
 
+
+	<% @boats.each do |boat| %>
+		<div>
+			<h3>Boats</h3>
+			<%= boat.name %>
+			<%= boat.location %>
+			<%= boat.containers %>
+		</div>
+	<% end %>
+
 	<br>
 
 	<a href=<%= '/users/edit' %>>Edit Your Profile</a>
 	<a href=<%= '/jobs/show' %>> Create New Jobs</a>
+	<a href=<%= '/boats/new'%>>Create a new Boat</a>
 
 <% end %>
 

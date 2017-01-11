@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 
   def show
   @jobs = Job.all
+  @boats = Boat.all
 
   end
 
