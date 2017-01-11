@@ -11,6 +11,11 @@
   <body>
   <h1>This is changed</h1>
 
+  <% if current_user %>
+  	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+
+  	<% end %>
+
   <ul>
 	<li><a href='/'>Home</a></li>
   	<li><a href=<%= '/users/sign_up'%>>Sign Up</a></li>
