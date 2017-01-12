@@ -5,38 +5,44 @@
 <!-- Displays current job information -->
 <div>
 	<h3>Job Number: <%= @job.id %></h3> 
+	<p>Job Name: <%= @job.name %></p>
 	<p>Destination: <%= @job.destination %></p>
 	<p>Origin: <%= @job.origin %></p>
 	<p>Cost: $<%= sprintf('%.2f', @job.cost) %></p>
 	<p>Description: <%= @job.description %></p>
 	<p>Number of Containers: <%= @job.containers %></p>
 	<h4>Assigned Boats: </h4>
-	<% @job.boats.each do |boat| %>
-		<div>
-			<p><%= boat.name %>
-			<%= form_tag remove_from_job_path(@job) do %>
-				<%= hidden_field_tag :boat_id, boat.id %>
-				<%= submit_tag ("Remove boat") %>
-			<% end %></p>
-		</div>
-	<% end %>
+	<div class="row">
+		<% @job.boats.each do |boat| %>
+			<div class="col-sm-4">
+				<p>Boat Name: <%= boat.name %>
+				<%= form_tag remove_from_job_path(@job) do %>
+					<%= hidden_field_tag :boat_id, boat.id %>
+					<%= submit_tag ("Remove boat") %>
+				<% end %></p>
+			</div>
+		<% end %>
+	</div>
 </div>
 
 
 <!-- Displays all available boats that can be assigned to a job -->
 <h2>Available Boats: </h2>
-<% @boats.each do |boat| %>
-	<div>
-		<p>Boat Name: <%= boat.name %></p>
-		<p>Boat Location: <%= boat.location %></p>
-		<p>Available Container Spaces: <%= boat.containers %></p>
-		<p><%= form_tag add_to_job_path(@job) do %>
-			<%= hidden_field_tag :boat_id, boat.id %>
-			<%= submit_tag ("Add To Job ") %></p>
-		<% end %> 
-	</div>
 
-<% end %>
+<div class="row">
+	<% @boats.each do |boat| %>
+		<div class="col-sm-4">
+			<p>Boat Name: <%= boat.name %></p>
+			<p>Boat Location: <%= boat.location %></p>
+			<p>Available Container Spaces: <%= boat.containers %></p>
+			<p><%= form_tag add_to_job_path(@job) do %>
+				<%= hidden_field_tag :boat_id, boat.id %>
+				<%= submit_tag ("Add To Job ") %></p>
+			<% end %> 
+		</div>
+
+	<% end %>
+</div>
 
 
 
