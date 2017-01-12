@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170111192509) do
 
-ActiveRecord::Schema.define(version: 20170111192152) do
-
-
   create_table "boats", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
