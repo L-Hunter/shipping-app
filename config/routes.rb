@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   get 'static_pages/about'
 
-  post '/jobs/add_to_job'
+  post '/jobs/add_to_job/:id', to: 'jobs#add_to_job', as: :add_to_job
+
+  post '/jobs/remove_from_job'
 
 
   resources :jobs, :boats, :profiles
