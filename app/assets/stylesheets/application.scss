@@ -1,6 +1,46 @@
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "maincolors";
+@import "static_pages";
+@import "profiles";
+
+
+body {
+	background-image: url("mainbg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	color: white;
+
+	.field {
+		color: black;
+	}
+}
+
+
+.navigation {
+
+	li {
+		a:hover {
+			background-color: white;
+		}
+	}
+
+}
+.navbar-brand {
+	font-size: 26px;
+	font-family: $main-font;
+	color: $blue;
+}
+
+
+.main-container {
+	background-color: white;
+}
+
+
+
+
+
 
 
