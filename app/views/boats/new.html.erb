@@ -1,4 +1,7 @@
 <h2>Create a New Boat</h2>
+<% flash.each do |name, msg| -%>
+	<%= content_tag :div, msg %>
+<% end %>
 
 <div>
 	<%= form_for Boat.new do |f| %>

@@ -15,7 +15,12 @@ class JobsController < ApplicationController
 
   def create
   	@job = Job.create(job_params)
-  	redirect_to @job
+    if @job.save
+      redirect_to @job
+    else
+      flash[:notice] = "Error creating job!!!"
+      render new_job_path
+    end
 
   end
 

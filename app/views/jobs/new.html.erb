@@ -1,7 +1,11 @@
 <h2>Create a New Job</h2>
+<% flash.each do |name, msg| -%>
+	<%= content_tag :div, msg %>
+<% end %>
 
 <div>
 	<%= form_for Job.new do |f| %>
+
 		<%= f.hidden_field :user_id, value: current_user.id %>
 		<div class="row">
 			<div class="col-sm-1"><%= f.label :name, value: "Name: " %></div>
