@@ -22,9 +22,16 @@
 			<%= form_tag '/jobs/add_to_job' do %>
 				<%= hidden_field_tag :boat_id, boat.id %>
 				<%= submit_tag ("Add To Job ") %>
-			<% end %>
+			<% end %> 
 		</div>
 
+	<% end %>
+
+
+
+		<% current_user.job.boats.each do |boat| %>
+		<h3>Boat Name:</h><%= boat.name %>
+		<br>
 	<% end %>
 
 
