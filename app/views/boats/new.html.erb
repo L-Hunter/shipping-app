@@ -1,16 +1,24 @@
-<h1>Boats</h1>
+<h2>Create a New Boat</h2>
 
+<div>
+	<%= form_for Boat.new do |f| %>
+		
+		<div class="row">
+			<div class="col-sm-1"><%= f.label :name, value: "Boat Name: " %></div>
+			<div class="col-sm-5"><%= f.text_field :name, :size=>"50", placeholder: "Please create a unique name." %></div>
+			<div class="col-sm-1"><%= f.label :containers, value: "Containers: " %></div>
+			<div class="col-sm-5"><%= f.text_field :containers, placeholder: "Max. Container  Storage", :size=>"25" %></div>
+		</div>
 
+		<div class="row">
+			<% cities = ["Gulltown", "King's Landing", "Lannisport", "Oldtown", "Pyke", "Seagard", "Sunspear", "White Harbor"] %>
+			<div class="col-sm-1"><%= f.label :origin, value: "Location: " %></div>
+			<div class="col-sm-11"><%= f.select(:location, options_for_select(cities)) %></div>
+		</div>
+		<div class="btn">
+			<%= f.submit "Submit" %>
+		</div>
 
-<%= form_for Boat.new do |f| %>
+	<% end %>
 
-	<%= f.label :name %> 
-		<%= f.text_field :name %>
-	<%= f.label :location %>
-		<%= f.text_field :location %>
-	<%= f.label :containers %>
-		<%= f.text_field :containers %>
-
-	<%= f.submit "Submit" %>
-
-<% end %>
+</div>

@@ -8,7 +8,6 @@ class JobsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @job = Job.find(params[:id])
     @boats = Boat.all
   end
@@ -51,7 +50,7 @@ class JobsController < ApplicationController
 
 
  	def job_params
- 		params.require(:job).permit(:destination, :cost, :origin, :description, :containers, :user_id)
+ 		params.require(:job).permit(:destination, :cost, :origin, :description, :containers, :user_id, :name)
 
  	end
 end
