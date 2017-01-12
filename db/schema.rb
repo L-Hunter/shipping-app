@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170110204709) do
 
+ActiveRecord::Schema.define(version: 20170112200642) do
+
+
   create_table "boats", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
@@ -36,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170110204709) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
   end
 
   create_table "users", force: :cascade do |t|

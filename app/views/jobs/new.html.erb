@@ -1,16 +1,39 @@
-<%= form_for Job.new do |f| %>
-		<%= f.hidden_field :user_id, value: current_user.id %>
-	<%= f.label :destination %> 
-		<%= f.text_field :destination %>
-	<%= f.label :description %>
-		<%= f.text_field :description %>
-	<%= f.label :origin %>
-		<%= f.text_field :origin %>
-	<%= f.label :cost %>
-		<%= f.text_field :cost %>
-	<%= f.label :containers %>
-		<%= f.text_field :containers %>
-
-	<%= f.submit "Submit" %>
-
+<h2>Create a New Job</h2>
+<% flash.each do |name, msg| -%>
+	<%= content_tag :div, msg %>
 <% end %>
+
+<div>
+	<%= form_for Job.new do |f| %>
+
+		<%= f.hidden_field :user_id, value: current_user.id %>
+		<div class="row">
+			<div class="col-sm-1"><%= f.label :name, value: "Name: " %></div>
+			<div class="col-sm-11"><%= f.text_field :name, :size=>"80", placeholder: "Must have unique name" %></div>
+		</div>
+		
+		<div class="row">
+		<% cities = ["Gulltown", "King's Landing", "Lannisport", "Oldtown", "Pyke", "Seagard", "Sunspear", "White Harbor"] %>
+			<div class="col-sm-1"><%= f.label :origin, value: "Origin: " %></div>
+			<div class="col-sm-2"><%= f.select(:origin, options_for_select(cities)) %></div>
+	    	<div class="col-sm-1"><%= f.label :destination, value: "Destination: " %></div>
+	    	<div class="col-sm-8"><%= f.select(:destination, options_for_select(cities)) %></div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-1"><%= f.label :description, value: "Description: " %></div>
+			<div class="col-sm-11"><%= f.text_field :description, :size=>"80", placeholder: "Describe your job, 50 character minimum", :minlength=>"50"%></div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-1"><%= f.label :cost, value: "Cost: " %></div>
+			<div class="col-sm-2"><%= f.text_field :cost, placeholder: "Must be above $1000" %></div>
+		
+			<div class="col-sm-1"><%= f.label :containers, value: "Containers: " %></div>
+			<div class="col-sm-8"><%= f.text_field :containers, placeholder: "Number of Containers" %></div>
+		</div>
+
+		<div class="btn"><%= f.submit "Submit" %></div>
+
+	<% end %> 
+</div>

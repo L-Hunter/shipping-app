@@ -12,8 +12,12 @@ class BoatsController < ApplicationController
 
   def create
   	@boat = Boat.create(boat_params)
-  	redirect_to '/profiles/show'
-
+    if @boat.save
+      redirect_to '/profiles/show'
+    else
+      flash[:notice] = "Error creating boat!!!"
+      render new_boat_path
+    end
   end
 
 def make_available_path
