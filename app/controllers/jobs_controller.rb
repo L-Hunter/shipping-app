@@ -8,6 +8,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     @job = Job.find(params[:id])
     @boats = Boat.all
   end
@@ -38,8 +39,8 @@ class JobsController < ApplicationController
   def remove_from_job
     @job = Job.find(params[:id])
     @boat = Boat.find(params[:boat_id])
-    current_user.job.boats.delete(@boat)
-    redirect_to @job
+    @job.boats.delete(@boat)
+    redirect_to job_path
 
   end
 
