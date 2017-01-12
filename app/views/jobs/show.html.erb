@@ -10,6 +10,15 @@
 				<%= @job.cost %>
 				<%= @job.description %>
 				<%= @job.containers %>
+				<% @job.boats.each do |boat| %>
+				<h3>Assigned Boat Name:</h><%= boat.name %>
+				<%= form_tag '/jobs/remove_from_job' do %>
+					<%= hidden_field_tag :boat_id, boat.id %>
+						<%= submit_tag ("Remove boat") %>
+					<% end %>
+				
+				<% end %>
+				
 			</div>
 
 
@@ -19,7 +28,7 @@
 			<%= boat.name %>
 			<%= boat.location %>
 			<%= boat.containers %>
-			<%= form_tag '/jobs/add_to_job' do %>
+			<%= form_tag add_to_job_path(@job) do %>
 				<%= hidden_field_tag :boat_id, boat.id %>
 				<%= submit_tag ("Add To Job ") %>
 			<% end %> 
@@ -29,10 +38,7 @@
 
 
 
-		<% current_user.job.boats.each do |boat| %>
-		<h3>Boat Name:</h><%= boat.name %>
-		<br>
-	<% end %>
+
 
 
 

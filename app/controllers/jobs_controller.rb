@@ -20,9 +20,10 @@ class JobsController < ApplicationController
   end
 
   def add_to_job
+    @job = Job.find(params[:id])
     @boat = Boat.find(params[:boat_id])
-    current_user.job.boats.push(@boat)
-    redirect_to '/profiles/show'
+    @job.boats.push(@boat)
+    redirect_to job_path
 
   end
 
@@ -31,6 +32,14 @@ class JobsController < ApplicationController
     @job.destroy
 
     redirect_to '/profiles/show'
+
+  end
+
+  def remove_from_job
+    @job = Job.find(params[:id])
+    @boat = Boat.find(params[:boat_id])
+    current_user.job.boats.delete(@boat)
+    redirect_to @job
 
   end
 
