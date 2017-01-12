@@ -16,7 +16,10 @@ class BoatsController < ApplicationController
 
   end
 
-
+def make_available_path
+boat.update(available: true)
+redirect_to boats_path
+end
 
 
 

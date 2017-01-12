@@ -4,6 +4,7 @@
 <% if current_user %>
 
 	<h2>User Information:</h2>
+	<%= current_user.full_name %>
 	<%= current_user.email %>
 	<%= current_user.id %>
 	<% @jobs.each do |job|  %>
@@ -27,9 +28,9 @@
 	<% @boats.each do |boat| %>
 		<div>
 			<h3>Boats</h3>
-			<%= boat.name %>
-			<%= boat.location %>
-			<%= boat.containers %>
+			<p> Boat Name: <%= boat.name %></p>
+			<p> Boat Location: <%= boat.location %></p>
+			<p> Number of Containers: <%= boat.containers %></p>
 		</div>
 	<% end %>
 
@@ -39,11 +40,12 @@
 	<a href=<%= '/jobs/new' %>> Create New Jobs</a>
 	<a href=<%= '/boats/new'%>>Create a new Boat</a>
 
+
 <% end %>
 
 <% if !current_user %>
 
-	<p>YOu're not logged in </p>
+	<p>You're not logged in </p>
 
 <% end %>
 

@@ -8,7 +8,6 @@ class JobsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @job = Job.find(params[:id])
     @boats = Boat.all
   end
