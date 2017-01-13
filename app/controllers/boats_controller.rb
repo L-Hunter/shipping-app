@@ -3,7 +3,8 @@ class BoatsController < ApplicationController
 
 
   def index
-  	@boats = Boat.all
+  	@boats = Boat.all.order(:available)
+
   end
 
   def show

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/about'
 
+  get '/boats/make_available/:id', to: 'boats#make_available', as: :make_available
+
   post '/jobs/add_to_job/:id', to: 'jobs#add_to_job', as: :add_to_job
 
   post '/jobs/remove_from_job/:id', to: 'jobs#remove_from_job', as: :remove_from_job

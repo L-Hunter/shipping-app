@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+	$(".make-available-btn").on("ajax:complete", function(event){
+		$(event.target).hide();
+		$(event.target).prev().addClass("available").html("Available");	
+		$(event.target).next().show()
+})
+})
