@@ -3,6 +3,7 @@
 @import "maincolors";
 @import "static_pages";
 @import "profiles";
+@import "jobs";
 
 
 body {
@@ -10,7 +11,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
-	color: white;
+	color: black;
 
 	.field {
 		color: black;
@@ -18,7 +19,9 @@ body {
 }
 
 
+
 .navigation {
+
 
 	li {
 		a:hover {
@@ -31,6 +34,10 @@ body {
 	font-size: 26px;
 	font-family: $main-font;
 	color: $blue;
+}
+
+.main-nav {
+	background-color: white;
 }
 
 
