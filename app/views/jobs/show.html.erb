@@ -35,6 +35,7 @@
 			<p>Boat Name: <%= boat.name %></p>
 			<p>Boat Location: <%= boat.location %></p>
 			<p>Available Container Spaces: <%= boat.containers %></p>
+			<div><%= image_tag boat.avatar.url %></div>
 			<p><%= form_tag add_to_job_path(@job) do %>
 				<%= hidden_field_tag :boat_id, boat.id %>
 				<%= submit_tag ("Add To Job ") %></p>
