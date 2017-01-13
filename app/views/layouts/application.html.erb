@@ -6,26 +6,54 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
   </head>
 
   <body>
-  <h1>This is changed</h1>
+    <div class="container-fluid main-container">
+        <div class="nav nav-bar main-nav navbar-fixed-top">
+          <div class="nav-brand">
+            <a class="navbar-brand">Westeros Shipping</a>
+          </div>
 
-  <% if current_user %>
-  	<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      <a href=<%= '/profiles/show' %>>Your Profile</a>
 
-  <% end %>
 
-  <ul>
-	<li><a href='/'>Home</a></li>
+        
 
-  <% if !current_user %>
-  	<li><a href=<%= '/users/sign_up'%>>Sign Up</a></li>
-  	<li><a href=<%= '/users/sign_in' %>>Sign In</a></li>
-  </ul>
+        <ul class="nav navbar-nav navbar-right navigation">
 
-  <% end %>
-    <%= yield %>
-  </body>
+          <% if current_user %>
+          	<li><a href='/'>Home</a></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            <li><a href=<%= '/profiles/show' %>>Your Profile</a></li>
+
+          <% end %>
+
+            <% if !current_user %>
+              <li><a href='/'>Home</a></li>
+            	<li><a href=<%= '/users/sign_up'%>>Sign Up</a></li>
+            	<li><a href=<%= '/users/sign_in' %>>Sign In</a></li>
+          </ul>
+
+
+
+        <% end %>
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+      <%= yield %>
+
+
+
+
+
+
+    </body>
 </html>

@@ -1,6 +1,65 @@
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 @import "boats"
+@import "maincolors";
+@import "static_pages";
+@import "profiles";
+@import "jobs";
+
+
+body {
+	background-image: url("mainbg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	color: red;
+	padding-top: 70px;
+	font-size: 16px;
+
+	.field {
+		color: black;
+	}
+
+	a {
+		color: white;
+	}
+}
+
+
+
+.navigation {
+
+
+	li {
+
+		a {
+			color: black;
+		}
+		a:hover {
+			background-color: white;
+		}
+	}
+
+}
+.navbar-brand {
+	font-size: 26px;
+	font-family: $main-font;
+	color: $blue;
+}
+
+.main-nav {
+	background-color: white;
+}
+
+
+.main-container {
+	background-color: white;
+}
+
+
+
+
+
+
 
