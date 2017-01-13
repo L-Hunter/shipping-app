@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   post '/jobs/remove_from_job/:id', to: 'jobs#remove_from_job', as: :remove_from_job
 
+  post '/boats/update'
 
   resources :jobs, :boats, :profiles
 
