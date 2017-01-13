@@ -31,7 +31,7 @@ end
 
 
  	def boat_params
- 		params.require(:boat).permit(:name, :location, :containers)
+ 		params.require(:boat).permit(:name, :location, :containers, :avatar)
 
  	end
 end
