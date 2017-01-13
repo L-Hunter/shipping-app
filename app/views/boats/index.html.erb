@@ -3,7 +3,7 @@
 
 
 <% @boats.each do |boat| %>
-<<<<<<< HEAD
+
 <p>
 	<%= boat.name %>:
 	<% if boat.available %>
@@ -13,13 +13,12 @@
 		<span class="unavailable">Unavailable</span>
 		<%= link_to "Make Available", make_available_path(boat), {remote: true, class: "make-available-btn"} %>
 		<%= link_to "Assign to Job", make_available_path(boat), {remote: true, class: "assign-btn hidden-btn"} %>
-=======
+
 
 	<p>
 		<%= boat.name %>
 		<%= image_tag boat.avatar.url %>
 		</p>
->>>>>>> master
 	<% end %>
 </p>
 <%end%>
