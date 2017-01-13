@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body {
-	color: white;
+.text-bg {
+	background-color: rgba(255,255,255,1);
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 100%;
+	color: $blue;
+	text-align: center;
 }
+
+
+
+
