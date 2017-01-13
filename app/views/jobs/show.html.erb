@@ -11,6 +11,8 @@
 	<p>Cost: $<%= sprintf('%.2f', @job.cost) %></p>
 	<p>Description: <%= @job.description %></p>
 	<p>Number of Containers: <%= @job.containers %></p>
+
+<!-- Displays boats attached to jobs -->
 	<h4>Assigned Boats: </h4>
 	<div class="row">
 		<% @job.boats.each do |boat| %>
@@ -24,6 +26,7 @@
 		<% end %>
 	</div>
 </div>
+
 
 
 <!-- Displays all available boats that can be assigned to a job -->

@@ -10,12 +10,12 @@
 			<div class="col-sm-1"><%= f.label :name, value: "Boat Name: " %></div>
 			<div class="col-sm-5"><%= f.text_field :name, :size=>"50", placeholder: "Please create a unique name." %></div>
 			<div class="col-sm-1"><%= f.label :containers, value: "Containers: " %></div>
-			<div class="col-sm-5"><%= f.text_field :containers, placeholder: "Max. Container  Storage", :size=>"25" %></div>
+			<div class="col-sm-5"><%= f.text_field :containers, placeholder: "Max. Container Storage", :size=>"25" %></div>
 		</div>
 
 		<div class="row">
 			<% cities = ["Gulltown", "King's Landing", "Lannisport", "Oldtown", "Pyke", "Seagard", "Sunspear", "White Harbor"] %>
-			<div class="col-sm-1"><%= f.label :origin, value: "Location: " %></div>
+			<div class="col-sm-1"><%= f.label :location, value: "Location: " %></div>
 			<div class="col-sm-11"><%= f.select(:location, options_for_select(cities)) %></div>
 		</div>
 

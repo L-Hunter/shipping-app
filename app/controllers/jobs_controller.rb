@@ -35,7 +35,6 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-
     redirect_to '/profiles/show'
 
   end

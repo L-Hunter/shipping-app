@@ -14,27 +14,53 @@
     <div class="container-fluid main-container">
         <div class="nav nav-bar main-nav navbar-fixed-top">
           <div class="nav-brand">
-            <a class="navbar-brand">Westeros Shipping</a>
+            <a class="navbar-brand" href="/">Westeros Shipping</a>
           </div>
 
 
 
         
 
-        <ul class="nav navbar-nav navbar-right navigation">
+        
 
           <% if current_user %>
-          	<li><a href='/'>Home</a></li>
-            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+
+          <ul class="nav navbar-nav navbar-left navigation">
+            <li><a href='/'>Home</a></li>
+            <li><a href='/static_pages/about'>About Us</a></li>
+
+
+          </ul>
+         
+          <ul class="nav navbar-nav navbar-right navigation">
             <li><a href=<%= '/profiles/show' %>>Your Profile</a></li>
+            <li><%= link_to('Your Boats', boats_index_path) %></li>
+            <li><a href=<%= '/jobs/new' %>> Create New Jobs</a></li>
+            <li><a href=<%= '/boats/new'%>>Create a new Boat</a></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+
+            </ul>
+
+
 
           <% end %>
 
+
             <% if !current_user %>
+            
+            <ul class="nav navbar-nav navbar-left navigation">
               <li><a href='/'>Home</a></li>
-            	<li><a href=<%= '/users/sign_up'%>>Sign Up</a></li>
-            	<li><a href=<%= '/users/sign_in' %>>Sign In</a></li>
-          </ul>
+              <li><a href='/static_pages/about'>About Us</a></li>
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right navigation">
+              <li><a href=<%= '/users/sign_up'%>>Sign Up</a></li>
+              <li><a href=<%= '/users/sign_in' %>>Sign In</a></li>
+            </ul>
+
+
+          
 
 
 

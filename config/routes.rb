@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   post '/jobs/remove_from_job/:id', to: 'jobs#remove_from_job', as: :remove_from_job
 
+  post '/boats/update'
 
   resources :jobs, :boats, :profiles
 
@@ -27,5 +28,7 @@ Rails.application.routes.draw do
       }
       
       get '/' => 'static_pages#home'
+
+      get '/about' => 'static_pages#about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
